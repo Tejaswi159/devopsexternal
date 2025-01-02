@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        form { max-width: 300px; margin: auto; }
+        input, select, button { width: 100%; margin: 5px; padding: 8px; }
+        button { background: #4CAF50; color: white; border: none; }
+    </style>
+</head>
+<body>
+    <h2>Event Registration</h2>
+    <form>
+        <input placeholder="Full Name" id="name" required>
+        <input type="email" placeholder="Email" id="email" required>
+        <input type="tel" placeholder="Phone Number" id="phone" required>
+        <select id="eventType" required>
+            <option value="" disabled selected>Select Event Type</option>
+            <option>Workshop</option>
+            <option>Seminar</option>
+            <option>Conference</option>
+            <option>Webinar</option>
+        </select>
+        <button type="button" onclick="submitForm()">Register</button>
+    </form>
+
+    <script>
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const eventType = document.getElementById('eventType').value;
+
+            alert(name && email && phone && eventType 
+                ? `Registration Successful!\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nEvent Type: ${eventType}` 
+                : 'Please fill out all fields.');
+        }
+    </script>
+</body>
+</html>
